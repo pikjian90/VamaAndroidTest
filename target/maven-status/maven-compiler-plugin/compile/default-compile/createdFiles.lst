@@ -1,0 +1,9 @@
+Pages/SmsAuthenticationPage.class
+Pages/BasePage.class
+Pages/CallsPage.class
+Pages/PhoneNumberPage.class
+Pages/ChatsPage.class
+Pages/SettingPage.class
+Pages/ContactsPage.class
+Pages/LoginPage.class
+Pages/SelectStatePage.class

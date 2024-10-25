@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-25T16:11:01 SGT" name="Suite" finished-at="2024-10-25T16:13:40 SGT" duration-ms="158277">
+    <groups>
+    </groups>
+    <test started-at="2024-10-25T16:11:01 SGT" name="Test" finished-at="2024-10-25T16:13:40 SGT" duration-ms="158277">
+      <class name="TestCases.PhoneNumberTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:01 SGT" name="setup" finished-at="2024-10-25T16:11:10 SGT" duration-ms="8397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testOnceInvalidPhoneNumber()[pri:1, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:10 SGT" name="testOnceInvalidPhoneNumber" finished-at="2024-10-25T16:11:15 SGT" duration-ms="5771" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnceInvalidPhoneNumber -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:15 SGT" name="tearDown" finished-at="2024-10-25T16:11:16 SGT" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:16 SGT" name="setup" finished-at="2024-10-25T16:11:22 SGT" duration-ms="6101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testEmptyPhoneNumber()[pri:2, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:22 SGT" name="testEmptyPhoneNumber" finished-at="2024-10-25T16:11:25 SGT" duration-ms="3050" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyPhoneNumber -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:25 SGT" name="tearDown" finished-at="2024-10-25T16:11:25 SGT" duration-ms="422" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:25 SGT" name="setup" finished-at="2024-10-25T16:11:31 SGT" duration-ms="5784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testInvalidCountryCode()[pri:3, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:31 SGT" name="testInvalidCountryCode" finished-at="2024-10-25T16:11:36 SGT" duration-ms="5285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidCountryCode -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:36 SGT" name="tearDown" finished-at="2024-10-25T16:11:37 SGT" duration-ms="405" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:37 SGT" name="setup" finished-at="2024-10-25T16:11:43 SGT" duration-ms="6316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testMoreThan3TimesInvalidPhoneNumber()[pri:4, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:43 SGT" name="testMoreThan3TimesInvalidPhoneNumber" finished-at="2024-10-25T16:11:54 SGT" duration-ms="10388" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMoreThan3TimesInvalidPhoneNumber -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.PhoneNumberTest@534df152]" started-at="2024-10-25T16:11:54 SGT" name="tearDown" finished-at="2024-10-25T16:11:54 SGT" duration-ms="411" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.PhoneNumberTest -->
+      <class name="TestCases.SelectStateTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:11:54 SGT" name="setup" finished-at="2024-10-25T16:12:00 SGT" duration-ms="6080" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testAllStatesSize()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:12:00 SGT" name="testAllStatesSize" finished-at="2024-10-25T16:13:02 SGT" duration-ms="62399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAllStatesSize -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:02 SGT" name="tearDown" finished-at="2024-10-25T16:13:03 SGT" duration-ms="435" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:03 SGT" name="setup" finished-at="2024-10-25T16:13:09 SGT" duration-ms="6020" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testSearchedStateResultListContainsKeyword()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:09 SGT" name="testSearchedStateResultListContainsKeyword" finished-at="2024-10-25T16:13:15 SGT" duration-ms="5581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchedStateResultListContainsKeyword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:15 SGT" name="tearDown" finished-at="2024-10-25T16:13:15 SGT" duration-ms="392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:15 SGT" name="setup" finished-at="2024-10-25T16:13:21 SGT" duration-ms="5932" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testSelectStateByScrolling()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:21 SGT" name="testSelectStateByScrolling" finished-at="2024-10-25T16:13:39 SGT" duration-ms="18291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectStateByScrolling -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SelectStateTest@55a561cf]" started-at="2024-10-25T16:13:39 SGT" name="tearDown" finished-at="2024-10-25T16:13:40 SGT" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.SelectStateTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
