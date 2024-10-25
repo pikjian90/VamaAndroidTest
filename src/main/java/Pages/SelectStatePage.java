@@ -73,10 +73,6 @@ public class SelectStatePage extends BasePage{
                 }
             }
         }
-        for (Object stateName : stateList.toArray()) {
-            System.out.println(stateName.toString());
-
-        }
 
         return stateList;
     }

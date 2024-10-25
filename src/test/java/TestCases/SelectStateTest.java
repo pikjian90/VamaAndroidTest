@@ -21,7 +21,6 @@ public class SelectStateTest extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
         for (WebElement webElement : webElementList) {
             String stateName = webElement.getText().toLowerCase();
-            System.out.println(stateName);
             softAssert.assertTrue(stateName.contains("sin"));
         }
         softAssert.assertAll();
