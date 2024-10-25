@@ -4,7 +4,7 @@ import Pages.*;
 import org.testng.annotations.Test;
 
 public class LoginAndLogoutTest extends BaseTest{
-    //Commented due to avoid Test Failed from Maven Test Hi1
+    //Commented due to avoid Test Failed from Maven Test Hi2
 //    @Test
 //    public void testLogin() throws InterruptedException {
 //        PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
