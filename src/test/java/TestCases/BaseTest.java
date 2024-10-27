@@ -38,7 +38,8 @@ public class BaseTest {
         prop = new Properties();
 
         try {
-            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/config.properties");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+                    + "/src/test/resources/config.properties");
             prop.load(fis);
 
             androidDeviceName = prop.getProperty("AndroidDeviceName");
