@@ -1,67 +1,108 @@
 package TestCases;
 
 import Pages.PhoneNumberPage;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Log;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class PhoneNumberTest extends BaseTest{
 
     @Test(priority = 3)
-    public void testInvalidCountryCode() throws InterruptedException {
-        PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
-        phoneNumberPage.setPhoneCode("");
-        phoneNumberPage.setPhoneNumber("");
+    public void testInvalidCountryCode() {
+        ExtentTest extentTest = extentReports.createTest(this.getClass().getName()
+                + "_testInvalidCountryCode");
 
-        String actualCountryCode = phoneNumberPage.getInvalidCountryCode();
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualCountryCode, "Invalid country code");;
+        try{
+            PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
+            phoneNumberPage.setPhoneCode("");
+            phoneNumberPage.setPhoneNumber("");
 
-        Thread.sleep(2000);
-        phoneNumberPage.clickSubmitButton();
+            String actualCountryCode = phoneNumberPage.getInvalidCountryCode();
+            SoftAssert softAssert = new SoftAssert();
+            softAssert.assertEquals(actualCountryCode, "Invalid country code");;
 
-        String actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
-        softAssert.assertTrue(actualValidationMessage.contains("Please provide valid Country Code"));
-        softAssert.assertAll();
+            Thread.sleep(2000);
+            phoneNumberPage.clickSubmitButton();
+
+            String actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
+            softAssert.assertTrue(actualValidationMessage.contains("Please provide valid Country Code"));
+            softAssert.assertAll();
+        }
+        catch (Exception e){
+            extentTest.log(Status.FAIL, e.getMessage());
+            extentTest.addScreenCaptureFromBase64String(takeScreenshot());
+        }
     }
 
     @Test(priority = 2)
     public void testEmptyPhoneNumber(){
-        PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
-        phoneNumberPage.setPhoneNumber("");
-        phoneNumberPage.clickSubmitButton();
-        String actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
+        ExtentTest extentTest = extentReports.createTest(this.getClass().getName()
+                + "_testEmptyPhoneNumber");
+        try{
+            PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
+            phoneNumberPage.setPhoneNumber("");
+            phoneNumberPage.clickSubmitButton();
+            String actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
 
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualValidationMessage, "This is not a valid phone number");
-        softAssert.assertAll();
+            SoftAssert softAssert = new SoftAssert();
+            softAssert.assertEquals(actualValidationMessage, "This is not a valid phone number");
+            softAssert.assertAll();
+        }
+        catch (Exception e){
+            extentTest.log(Status.FAIL, e.getMessage());
+            extentTest.addScreenCaptureFromBase64String(takeScreenshot());
+        }
+
+
     }
 
     @Test(priority = 1)
     public void testOnceInvalidPhoneNumber(){
-        PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
-        phoneNumberPage.setPhoneNumber("0000000000000");
-        phoneNumberPage.clickSubmitButton();
-        String actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
+        ExtentTest extentTest = extentReports.createTest(this.getClass().getName()
+                + "_testOnceInvalidPhoneNumber");
 
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualValidationMessage, "3009 - invalid phone number");
-        softAssert.assertAll();
+        try{
+            PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
+            phoneNumberPage.setPhoneNumber("0000000000000");
+            phoneNumberPage.clickSubmitButton();
+            String actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
+
+            SoftAssert softAssert = new SoftAssert();
+            softAssert.assertEquals(actualValidationMessage, "3009 - invalid phone number");
+            softAssert.assertAll();
+        }
+        catch (Exception e){
+            extentTest.log(Status.FAIL, e.getMessage());
+            extentTest.addScreenCaptureFromBase64String(takeScreenshot());
+        }
+
     }
 
     @Test(priority = 4)
     public void testMoreThan3TimesInvalidPhoneNumber(){
-        PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
-        phoneNumberPage.setPhoneNumber("0000000000000");
+        ExtentTest extentTest = extentReports.createTest(this.getClass().getName()
+                + "_testOnceInvalidPhoneNumber");
 
-        String actualValidationMessage = null;
-        for (int i = 0; i < 4; i++) {
-            phoneNumberPage.clickSubmitButton();
-            actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
+        try{
+            PhoneNumberPage phoneNumberPage = loginPage.goToPhoneNumberPage();
+            phoneNumberPage.setPhoneNumber("0000000000000");
+
+            String actualValidationMessage = null;
+            for (int i = 0; i < 4; i++) {
+                phoneNumberPage.clickSubmitButton();
+                actualValidationMessage = phoneNumberPage.getValidationTextViewMessage();
+            }
+
+            SoftAssert softAssert = new SoftAssert();
+            logger.info(actualValidationMessage);
+            softAssert.assertTrue(actualValidationMessage.contains("Integrity API error"));
+            softAssert.assertAll();
         }
-        
-        SoftAssert softAssert = new SoftAssert();
-        System.out.println(actualValidationMessage);
-        softAssert.assertTrue(actualValidationMessage.contains("Integrity API error"));
-        softAssert.assertAll();
+        catch (Exception e){
+            extentTest.log(Status.FAIL, e.getMessage());
+            extentTest.addScreenCaptureFromBase64String(takeScreenshot());
+        }
     }
 }
