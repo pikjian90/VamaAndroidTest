@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Properties;
 
@@ -19,7 +21,7 @@ public class BaseTest {
     public static AndroidDriver mobileDriver;
     public static String appiumServer = "127.0.0.1";
     public static int appiumPort = 4723;
-    public static URL appiumURL = null;
+    public static URI appiumURL = null;
     public BasePage basePage;
     public LoginPage loginPage;
     String androidDeviceName = null;
@@ -46,10 +48,13 @@ public class BaseTest {
             androidAppPackage = prop.getProperty("AndroidAppPackage");
             androidAppActivity = prop.getProperty("AndroidAppActivity");
             androidIgnoreHiddenApiPolicyError = prop.getProperty("AndroidIgnoreHiddenApiPolicyError");
+            appiumURL=new URI(prop.getProperty("AppiumUrl"));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }
@@ -66,8 +71,7 @@ public class BaseTest {
         cap.setCapability("appPackage", androidAppPackage);
         cap.setCapability("appActivity", androidAppActivity);
         cap.setCapability("appium:ignoreHiddenApiPolicyError", androidIgnoreHiddenApiPolicyError);
-        appiumURL = new URL("http://" + appiumServer + ":" + appiumPort + "/wd/hub");
-        mobileDriver = new AndroidDriver(appiumURL, cap);
+        mobileDriver = new AndroidDriver(appiumURL.toURL(), cap);
 
         basePage = new BasePage();
         loginPage = new LoginPage();
